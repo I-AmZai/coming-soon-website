@@ -1,0 +1,111 @@
+/* Gradient background animation */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lucida Console", Monaco, monospace; /* Lucida Console font */
+    color: #fff; /* Text color for better contrast with the gradient */
+    background: linear-gradient(236deg, #244be9, #6d4384, #fe001b);
+    background-size: 180% 180%;
+    animation: gradient-animation 30s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Centered text styling */
+.centered-text {
+    font-size: 3rem; /* Adjust font size if needed */
+    text-align: center;
+    font-weight: bold; /* Make the text bold */
+    letter-spacing: 0.3em; /* Increase letter spacing to make the text wide */
+    line-height: 1.2; /* Reduce the line height slightly */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.centered-text:hover {
+    transform: scale(1.1); /* Slightly grow the text on hover */
+}
+
+/* Small text at the bottom */
+.bottom-text {
+    position: absolute;
+    bottom: 250px; /* Position it near the bottom */
+    font-size: 1rem; /* Smaller text size */
+    text-align: center;
+    color: #fff; /* Text color */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.bottom-text:hover {
+    transform: scale(1.1); /* Slightly grow the text on hover */
+}
+
+/* Information button styling */
+.info-button {
+    position: absolute;
+    bottom: 20px; /* Position it near the bottom */
+    right: 20px; /* Align it to the right */
+    text-align: center; /* Center the content inside the button */
+}
+
+.info-button img {
+    width: 40px; /* Set a square width (adjust if needed) */
+    height: 40px; /* Set a square height (to make it round) */
+    border-radius: 50%; /* Make the image round */
+    opacity: 1; /* Make the image fully visible */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.info-button img:hover {
+    transform: scale(1.2); /* Slightly grow the image on hover */
+}
+
+
+/* Info box styling */
+.info-box {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    max-width: 300px; /* Set a max width for the text box */
+    transition: opacity 0.5s ease; /* Smooth fade in effect */
+    opacity: 0; /* Start off invisible */
+}
+
+/* Info box appears on hover */
+.info-button:hover .info-box {
+    display: block; /* Make the info box visible on hover */
+    opacity: 1; /* Fade in the info box */
+}
+
+/* When info box is shown, the PNG icon fades out */
+.info-button.hide-icon img {
+    opacity: 0; /* Fade out the icon */
+}
+
+/* Info box fade-in on hover */
+.info-button:hover .info-box {
+    display: block; /* Show the info box */
+    opacity: 1; /* Fade-in effect */
+}
+
+/* Info button fades back in */
+.info-button.show-icon img {
+    opacity: 1; /* Fade in the PNG icon */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in for the icon */
+}
